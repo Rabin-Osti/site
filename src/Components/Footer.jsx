@@ -60,6 +60,8 @@ function Footer() {
 const Wrapper = styled(motion.div)`
   max-width: 1264px;
   width: 100%;
+  z-index: 2;
+
   border-top: 1px solid #f0f2f5;
   display: flex;
   justify-content: space-between;

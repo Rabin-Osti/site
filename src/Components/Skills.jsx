@@ -66,6 +66,7 @@ const Wrapper = styled(motion.div)`
   max-width: 1264px;
   width: 100%;
   padding: 0 32px;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -88,7 +89,7 @@ const Wrapper = styled(motion.div)`
     }
   }
   .inner-wrapper {
-    background-color: #1c1c22;
+    background-color: #111338;
     padding: 24px;
     display: flex;
     flex-direction: column;

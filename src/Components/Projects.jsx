@@ -122,6 +122,8 @@ const Wrapper = styled(motion.div)`
 
   max-width: 1264px;
   width: 100%;
+  z-index: 2;
+
   padding: 0 32px;
   display: flex;
   flex-direction: column;
@@ -153,7 +155,8 @@ const Project = styled(motion.div)`
   border-radius: 20px;
   flex-direction: column;
   gap: 8px;
-  background-color: #1c1c22;
+  background-color: #111338;
+
   overflow: hidden;
 `;
 const Top = styled.div`

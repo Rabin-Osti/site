@@ -136,6 +136,7 @@ const Left = styled(motion.div)`
 
     @media (max-width: 700px) {
       max-width: 90%;
+      text-align: justify;
     }
   }
   button {
@@ -173,8 +174,8 @@ const Left = styled(motion.div)`
   @media (max-width: 450px) {
     align-items: start;
     p {
-      min-width: 100%;
-      text-align: left;
+      min-width: 95%;
+      text-align: justify;
     }
   }
 `;

@@ -21,6 +21,7 @@ function Navbar() {
   const [effect, setEffect] = useState(false);
   const dropdownRef = useRef(null);
   const menuRef = useRef(null);
+  const [mobileView, setMobileView] = useState(false);
 
   useEffect(() => {
     if (effect) {
@@ -71,38 +72,32 @@ function Navbar() {
         <a href="#contact-section">
           <button>LET'S TALK</button>
         </a>
-        <Hamburger onClick={handleToggle} effect={effect} ref={dropdownRef}>
-          <div className={effect ? "line1" : ""}></div>
-          <div className={effect ? "line2" : ""}></div>
-          <div className={effect ? "line3" : ""}></div>
-        </Hamburger>
-        {
-          <HamburgerMenu className={effect ? "showHamMenu" : ""} ref={menuRef}>
-            <ul>
-              <a href="#home-section" onClick={handleToggle}>
-                Home
-              </a>
-
-              <a
-                className="offset"
-                href="#skills-section"
-                onClick={handleToggle}
-              >
-                Skills
-              </a>
-              <a href="#projects-section" onClick={handleToggle}>
-                Projects
-              </a>
-              <a href="#contact-section" onClick={handleToggle}>
-                Contact
-              </a>
-              <a href="#faq-section" onClick={handleToggle}>
-                FAQ
-              </a>
-            </ul>
-          </HamburgerMenu>
-        }
       </Right>
+      <Hamburger onClick={handleToggle} effect={effect} ref={dropdownRef}>
+        <div className={effect ? "line1" : ""}></div>
+        <div className={effect ? "line2" : ""}></div>
+        <div className={effect ? "line3" : ""}></div>
+      </Hamburger>
+      <HamburgerMenu className={effect ? "showHamMenu" : ""} ref={menuRef}>
+        <ul>
+          <a href="#home-section" onClick={handleToggle}>
+            Home
+          </a>
+
+          <a className="offset" href="#skills-section" onClick={handleToggle}>
+            Skills
+          </a>
+          <a href="#projects-section" onClick={handleToggle}>
+            Projects
+          </a>
+          <a href="#contact-section" onClick={handleToggle}>
+            Contact
+          </a>
+          <a href="#faq-section" onClick={handleToggle}>
+            FAQ
+          </a>
+        </ul>
+      </HamburgerMenu>
     </Wrapper>
   );
 }
@@ -115,10 +110,10 @@ const Wrapper = styled(motion.div)`
   width: 100%;
   height: 80px;
   padding: 0 32px;
-  z-index: 5;
+  z-index: 2;
   @media (max-width: 720px) {
     height: 70px;
-    background-color: #161513;
+    background-color: #0c111f;
     border-bottom: 1px solid white;
   }
   .line1 {
@@ -142,16 +137,6 @@ const Left = styled.div`
     @media (max-width: 720px) {
       display: none;
     }
-
-    a:hover {
-      transition: all 0.2s ease;
-      :hover {
-        cursor: pointer;
-        background: linear-gradient(to right, #ec008c, #fc6767);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
     }
   }
 `;
@@ -181,7 +166,7 @@ const Right = styled.div`
   }
 `;
 const Hamburger = styled.div`
-  z-index: 10;
+  z-index: 2;
   display: none;
   height: 100%;
   :hover {
@@ -203,18 +188,15 @@ const Hamburger = styled.div`
 `;
 const HamburgerMenu = styled.div`
   display: none;
-  @media (max-width: 720px) {
-    display: block;
-  }
-  background-color: red;
+
   background: linear-gradient(90deg, #ec008c 0%, #fc6767 100%);
 
   position: fixed;
   top: 70px;
   bottom: 0;
-  z-index: 10;
   width: 250px;
   right: -250px;
+  z-index: 100000;
   transition: all 0.5s ease;
   ul {
     height: 100%;
@@ -226,6 +208,9 @@ const HamburgerMenu = styled.div`
   }
   a {
     font-size: 30px;
+  }
+  @media (max-width: 720px) {
+    display: block;
   }
 `;
 export default Navbar;

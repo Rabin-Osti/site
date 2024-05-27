@@ -182,6 +182,7 @@ function Contact() {
 const Wrapper = styled(motion.div)`
   max-width: 1264px;
   width: 100%;
+  z-index: 2;
   padding: 0 32px;
   display: flex;
   justify-content: space-between;
@@ -189,6 +190,7 @@ const Wrapper = styled(motion.div)`
     flex-direction: column;
     gap: 32px;
   }
+
   button {
     color: var(--white-primary);
     font-weight: 500;
@@ -216,6 +218,7 @@ const Left = styled(motion.div)`
   flex: 1;
   display: flex;
   flex-direction: column;
+
   gap: 20px;
   .icon-text {
     display: flex;
@@ -247,7 +250,8 @@ const Right = styled(motion.form)`
   display: flex;
   flex-direction: column;
   gap: 20px;
-
+  max-width:; 100%;
+  overflow: hidden;
   div {
     display: flex;
     flex-direction: column;

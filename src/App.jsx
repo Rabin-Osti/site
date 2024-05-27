@@ -1,5 +1,3 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
 import "./App.css";
 import Navbar from "./Components/Navbar";
 import styled from "styled-components";
@@ -9,17 +7,21 @@ import Projects from "./Components/Projects";
 import Contact from "./Components/Contact";
 import Faq from "./Components/Faq";
 import Footer from "./Components/Footer";
+import BackgroundEffect from "./Components/BackgroundEffect";
 function App() {
   return (
-    <ContainerWrapper>
-      <Navbar />
-      <Hero />
-      <Skills />
-      <Projects />
-      <Contact />
-      <Faq />
-      <Footer />
-    </ContainerWrapper>
+    <div>
+      <BackgroundEffect />
+      <ContainerWrapper>
+        <Navbar />
+        <Hero />
+        <Skills />
+        <Projects />
+        <Contact />
+        <Faq />
+        <Footer />
+      </ContainerWrapper>
+    </div>
   );
 }
 const ContainerWrapper = styled.div`

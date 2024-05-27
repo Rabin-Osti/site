@@ -88,6 +88,8 @@ const Wrapper = styled(motion.div)`
   width: 100%;
   padding: 0 32px;
   display: flex;
+  z-index: 2;
+
   justify-content: space-between;
   font-family: "Kanit", sans-serif;
   @media (max-width: 800px) {
@@ -185,6 +187,7 @@ const Question = styled.div`
 
 const Ans = styled.div`
   font-size: 20px;
+  color: white;
   line-height: 1.7;
   overflow: hidden;
   height: 0;
